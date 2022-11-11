@@ -16,7 +16,7 @@ class WelcomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Learn about the fascinating world of logic gates!',
+                'Learn about logic gates!',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.firaSans(
                   textStyle: const TextStyle(
@@ -31,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                 'Logic gates are the fundamental building blocks that '
                 'powers our toasters, phones, and even supercomputers. '
                 'In this interactive game, try your hands at solving '
-                'challenges by building your own logic-gated circuits!',
+                'challenges by building your own logic-gated circuits.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.firaSans(
                   textStyle: const TextStyle(
@@ -51,7 +51,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Start game'),
+                child: const Text('Start game!'),
               ),
             ],
           ),
