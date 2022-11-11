@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../logic/controllers/gates_selected_controller.dart';
+import '../../logic/gate.dart';
 
 class ChallengePage extends StatelessWidget {
   const ChallengePage({Key? key}) : super(key: key);
@@ -46,10 +47,11 @@ class ChallengePage extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Provider.of<GatesSelectedController>(context,
+                      content: checkGates(
+                              1,
+                              Provider.of<GatesSelectedController>(context,
                                       listen: false)
-                                  .gatesSelected[0] ==
-                              'OR'
+                                  .gatesSelected)
                           ? Text("Correct!")
                           : Text("Incorrect!"),
                     ),
@@ -128,7 +130,7 @@ class _CircuitPaneState extends State<CircuitPane> {
             ),
             Center(
               child: Container(
-                margin: EdgeInsets.fromLTRB(5.0, 27.0, 0.0, 0.0),
+                margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                 height: 80.0 * MediaQuery.of(context).size.width / 1100.0,
                 width: 144.0 * MediaQuery.of(context).size.width / 1100.0,
                 decoration: BoxDecoration(
