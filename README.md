@@ -6,6 +6,6 @@ TODO: Insert demo gif
 ## Motivation 💪
 Logic gates are the fundamental building blocks of digital electronics. They can be found in our daily appliances such as our thermostats and phones, and can also be found in life-saving hospital appliances and mission-critical spaceship supercomputers.
 
-To motivate and inspire the next-generation of engineers, we have decided to design and develop a gamified experience that will teach them about the fundamental concepts in electrical engineering — logic gates!
+To motivate and inspire the next-generation of engineers, we have decided to design and develop a gamified experience that will teach them about the fundamental concepts in electrical and computer engineering — logic gates!
 
 ## How it works ⚒
