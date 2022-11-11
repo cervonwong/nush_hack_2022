@@ -1,16 +1,11 @@
-# nush_hack_2022
+## What is this 🤔
+This is an education app to allow teenagers like ourselves to learn more about the logic gates and its notations. Users can construct circuits using the app's drag-and-drop interface.
 
-A project for NUSH Hack 2022
+TODO: Insert demo gif
 
-## Getting Started
+## Motivation 💪
+Logic gates are the fundamental building blocks of digital electronics. They can be found in our daily appliances such as our thermostats and phones, and can also be found in life-saving hospital appliances and mission-critical spaceship supercomputers.
 
-This project is a starting point for a Flutter application.
+To motivate and inspire the next-generation of engineers, we have decided to design and develop a gamified experience that will teach them about the fundamental concepts in electrical engineering — logic gates!
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How it works ⚒
