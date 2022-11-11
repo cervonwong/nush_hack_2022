@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'ui/pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,58 +13,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Cool app',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        backgroundColor: Color(0xFFFFFCF0),
+        canvasColor: Color(0xFFFFFCF0),
+        textTheme: GoogleFonts.firaSansTextTheme(),
         primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            textStyle: MaterialStateProperty.all<TextStyle>(
+              GoogleFonts.firaSans(
+                textStyle: const TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w600,
+                  height: 1.2,
+                ),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            elevation: MaterialStateProperty.all<double>(0.0),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
             ),
-          ],
+            visualDensity: const VisualDensity(
+              vertical: 4.0,
+              horizontal: 4.0,
+            ),
+            foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+              return const Color(0xFF000000);
+            }),
+            backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+              return const Color(0xFFFFD233);
+            }),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const WelcomePage(),
     );
   }
 }

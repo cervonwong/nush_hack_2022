@@ -7,3 +7,4 @@ linter:
     avoid_relative_lib_imports: true
     prefer_const_constructors: true
     prefer_relative_imports: true
+    non_constant_identifier_names: false
