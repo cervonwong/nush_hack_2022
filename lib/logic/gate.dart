@@ -127,6 +127,8 @@ bool solve_expression(String expression, List<bool> inputs) {
   return output;
 }
 
+
+
 bool verifyEquality(Circuit circuit, String expression, int num_vars) {
   for (int i = 0; i < pow(2, num_vars); ++i) {
     var binary_string = num_vars.toRadixString(2);
@@ -141,10 +143,68 @@ bool verifyEquality(Circuit circuit, String expression, int num_vars) {
   return true;
 }
 
+Gate wordToGate(String expression, List<Gate> inputs){
+  switch(expression) {
+    case "AND": {
+      return And(inputs);
+    }
+    case "OR": {
+      return Or(inputs);
+    }
+    case "NOT": {
+      return Not(inputs);
+    }
+    case "NAND": {
+      return Nand(inputs);
+    }
+    case "NOR": {
+      return Nor(inputs);
+    }
+    case "XOR": {
+      return Xor(inputs);
+    }
+    case "XNOR": {
+      return Xnor(inputs);
+    }
+  }
+  return And(inputs);
+}
+
 bool checkGates(int questionNumber, List<String> gates) {
-  // TODO: gates is a list of the gate names in caps e.g. ["AND", "NOT", "OR"].
-  //  questionNumber is 1-indexed.
-  return true;
+  var a = Signal([], false);
+  var b = Signal([], false);
+  var c = Signal([], false);
+  switch(questionNumber){
+    case 1: {
+      return verifyEquality(Circuit([a, b], wordToGate(gates[0],[a, b])), "A*B", 2);
+    }
+    case 2: {
+      return verifyEquality(Circuit([a, b], wordToGate(gates[1],[wordToGate(gates[0],[a]), b])), "!A+B", 2);
+    }
+    case 3: {
+      var not_c = wordToGate(gates[0], [c]);
+      var a_and_b = wordToGate(gates[1], [a,b]);
+      var b_and_not_c = wordToGate(gates[2], [b, not_c]);
+      var out_gate = wordToGate(gates[3], [a_and_b, b_and_not_c]);
+      return verifyEquality(Circuit([a, b, c], out_gate), 'A*C+B*!C', 3);
+    }
+    case 4: {
+      var a_xor_c = wordToGate(gates[0], [a,c]);
+      var b_and_c = wordToGate(gates[1], [b,c]);
+      var out_gate = wordToGate(gates[2], [a_xor_c, b_and_c]);
+      return verifyEquality(Circuit([a, b, c], out_gate), 'A*!C+!A*C+B*C', 3);
+    }
+    case 5: {
+      return verifyEquality(Circuit([a, b], wordToGate(gates[0],[a, b])), "!A+!B", 2);
+    }
+    case 6: {
+      var a_xor_b = wordToGate(gates[0], [a,b]);
+      var a_xor_c = wordToGate(gates[1], [a,c]);
+      var out_gate = wordToGate(gates[2], [a_xor_c, a_xor_b]);
+      return verifyEquality(Circuit([a, b, c], out_gate), 'A*!B*!C+!A*B*C', 3);
+    }
+  }
+  return false;
 }
 
 Gate circuit(Signal a, Signal b) {
@@ -157,8 +217,5 @@ Gate circuit(Signal a, Signal b) {
 }
 
 void main() {
-  var a = Signal([], false);
-  var b = Signal([], false);
-  print(solve_expression("!A*B+!B*A", [false, true]));
-  print(verifyEquality(Circuit([a, b], Xnor([a, b])), "A*B+!A*!B", 2));
+  print(checkGates(6, ["XOR", "XOR", "AND"]));
 }
