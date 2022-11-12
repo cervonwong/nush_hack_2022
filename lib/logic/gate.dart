@@ -131,11 +131,15 @@ bool solve_expression(String expression, List<bool> inputs) {
 
 bool verifyEquality(Circuit circuit, String expression, int num_vars) {
   for (int i = 0; i < pow(2, num_vars); ++i) {
-    var binary_string = num_vars.toRadixString(2);
+    var binary_string = i.toRadixString(2);
     var inputs = List<bool>.filled(num_vars, false);
-    for (int i = 0; i < binary_string.length; ++i) {
-      inputs[num_vars - i - 1] = (binary_string[i] == '0' ? false : true);
+    while(binary_string.length != num_vars){
+      binary_string = '0' + binary_string;
     }
+    for (int j = 0; j < binary_string.length; ++j) {
+      inputs[j] = (binary_string[j] == '0' ? false : true);
+    }
+    print(inputs);
     if (circuit.evaluate(inputs) != solve_expression(expression, inputs)) {
       return false;
     }
@@ -217,5 +221,5 @@ Gate circuit(Signal a, Signal b) {
 }
 
 void main() {
-  print(checkGates(6, ["XOR", "XOR", "AND"]));
+  print(checkGates(1, ["AND"]));
 }
