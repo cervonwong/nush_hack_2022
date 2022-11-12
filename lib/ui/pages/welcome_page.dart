@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
+import '../../logic/controllers/gates_selected_controller.dart';
 import 'challenge_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -47,7 +49,11 @@ class WelcomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ChallengePage(),
+                      builder: (context) => ChallengePage(
+                          questionNumber: Provider.of<GatesSelectedController>(
+                                  context,
+                                  listen: false)
+                              .questionNumber),
                     ),
                   );
                 },
