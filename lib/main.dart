@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Cool app',
+        title: 'LiveLaughLogic',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           backgroundColor: Color(0xFFFFFCF0),
