@@ -14,6 +14,10 @@ To motivate and inspire the next-generation of engineers, we have decided to des
 
 We used the flutter framework with dart and it runs on windows and any web browser on any device. (except mobile) To test the circuits we used a recursive way to test whether a given circuit worked with gates and checked whether it returned the correct outputs as the boolean algebra expression.
 
+## How to run
+
+Go to https://nush-hack-2022.web.app/#/ to try it out
+
 ## Accomplishments
 
 Drag and drop system
