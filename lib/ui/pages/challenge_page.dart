@@ -205,7 +205,7 @@ class ChallengePage extends StatelessWidget {
                     );
                   }
                 },
-                child: Text('Check circuit'),
+                child: Text('Run circuit!'),
               ),
             ],
           ),
