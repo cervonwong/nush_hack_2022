@@ -497,11 +497,11 @@ class _CircuitPane2State extends State<CircuitPane2> {
                 margin: EdgeInsets.fromLTRB(
                   0.0,
                   0.0,
-                  MediaQuery.of(context).size.width * 0.19,
-                  MediaQuery.of(context).size.width * 0.08,
+                  MediaQuery.of(context).size.width * 0.185,
+                  MediaQuery.of(context).size.width * 0.075,
                 ),
-                height: 80.0 * MediaQuery.of(context).size.width / 1100.0,
-                width: 144.0 * MediaQuery.of(context).size.width / 1100.0,
+                height: 80.0 * MediaQuery.of(context).size.width / 1150.0,
+                width: 144.0 * MediaQuery.of(context).size.width / 1150.0,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Color(0xFFCBCBCB),
@@ -541,13 +541,13 @@ class _CircuitPane2State extends State<CircuitPane2> {
             Center(
               child: Container(
                 margin: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * 0.19,
-                  MediaQuery.of(context).size.width * 0.08,
+                  MediaQuery.of(context).size.width * 0.175,
+                  MediaQuery.of(context).size.width * 0.073,
                   0.0,
                   0.0,
                 ),
-                height: 80.0 * MediaQuery.of(context).size.width / 1100.0,
-                width: 144.0 * MediaQuery.of(context).size.width / 1100.0,
+                height: 80.0 * MediaQuery.of(context).size.width / 1150.0,
+                width: 144.0 * MediaQuery.of(context).size.width / 1150.0,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Color(0xFFCBCBCB),
