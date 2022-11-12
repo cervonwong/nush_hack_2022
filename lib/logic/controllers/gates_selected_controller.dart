@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class GatesSelectedController extends ChangeNotifier {
-  int questionNumber = 6;
+  int questionNumber = 1;
   String? gate1;
   String? gate2;
   String? gate3;
