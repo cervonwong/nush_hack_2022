@@ -1,18 +1,19 @@
-#LiveLaughLogic
+# LiveLaughLogic
 
 ## What is this 🤔
-This is an education app to allow teenagers like ourselves to learn more about the logic gates and its notations. Users can construct circuits using the app's drag-and-drop interface.
+It is an interactive game with a series of puzzles. The prompt is a boolean algebra expression and the programmer must find out where to put the gates such that the correct combinatorial circuit is made using the drag-and-drop interface.
 
 TODO: Insert demo gif
 
 ## Motivation 💪
 Logic gates are the fundamental building blocks of digital electronics. They can be found in our daily appliances such as our thermostats and phones, and can also be found in life-saving hospital appliances and mission-critical spaceship supercomputers.
 
-To motivate and inspire the next-generation of engineers, we have decided to design and develop a gamified experience that will teach them about the fundamental concepts in electrical and computer engineering — logic gates!
+To motivate and inspire the next generation of engineers, we designed and developped a gamified experience that will teach them about the fundamental concepts in electrical and computer engineering — logic gates!
 
-## How it works ⚒
-
-We used the flutter framework with dart and it runs on windows and any web browser on any device. (except mobile) To test the circuits we used a recursive way to test whether a given circuit worked with gates and checked whether it returned the correct outputs as the boolean algebra expression.
+## How we built it ⚒
+ - In order to reach the greatest number of users, we build this app with Flutter, which allows it to be played on any desktop web browser and even in Windows. 
+ - We built a circuit verifier and a boolean expression parser in Dart to allow users to experiment with different circuit combinations.
+ - We used Firebase to host the website on [nush-hack-2022.web.app](https://nush-hack-2022.web.app/#/) and to manage routing and persistence.
 
 ## How to run
 
