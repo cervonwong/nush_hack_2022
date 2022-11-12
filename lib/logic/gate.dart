@@ -141,6 +141,8 @@ bool verifyEquality(Circuit circuit, String expression, int num_vars) {
     }
     print(inputs);
     if (circuit.evaluate(inputs) != solve_expression(expression, inputs)) {
+      print(circuit.evaluate(inputs));
+      print(solve_expression(expression, inputs));
       return false;
     }
   }
@@ -187,9 +189,9 @@ bool checkGates(int questionNumber, List<String> gates) {
     }
     case 3: {
       var not_c = wordToGate(gates[0], [c]);
-      var a_and_b = wordToGate(gates[1], [a,b]);
+      var a_and_c = wordToGate(gates[1], [a,c]);
       var b_and_not_c = wordToGate(gates[2], [b, not_c]);
-      var out_gate = wordToGate(gates[3], [a_and_b, b_and_not_c]);
+      var out_gate = wordToGate(gates[3], [a_and_c, b_and_not_c]);
       return verifyEquality(Circuit([a, b, c], out_gate), 'A*C+B*!C', 3);
     }
     case 4: {
@@ -221,5 +223,4 @@ Gate circuit(Signal a, Signal b) {
 }
 
 void main() {
-  print(checkGates(1, ["AND"]));
 }
